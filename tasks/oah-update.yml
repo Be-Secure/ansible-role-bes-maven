@@ -1,0 +1,7 @@
+---
+- name: Updating maven to latest
+  become: yes
+  apt:
+    name: maven
+    update_cache: yes
+    state: present
