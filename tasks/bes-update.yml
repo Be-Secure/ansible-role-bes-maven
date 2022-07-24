@@ -4,4 +4,4 @@
   apt:
     name: maven
     update_cache: no
-    state: present
+    state: latest
