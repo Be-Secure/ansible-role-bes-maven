@@ -3,5 +3,5 @@
   become: yes
   apt:
     name: maven
-    update_cache: yes
+    update_cache: no
     state: present
