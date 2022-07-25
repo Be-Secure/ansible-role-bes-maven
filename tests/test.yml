@@ -2,4 +2,4 @@
 - hosts: localhost
   remote_user: root
   roles:
-    - ansible-role-bes-maven
+    - ansible-role-oah-maven
