@@ -2,9 +2,19 @@
 - name: Validate Installation
   command: which mvn
   register: package_check
+  ignore_errors: true
+
+- command: mvn --version
+  register: mvn_version
+  when: package_check.rc == 0
+
 
 - name: Message
   debug: 
-    msg: "Package found"
-  when: package_check is succeeded
-  failed_when: package_check.rc == 1
+    msg: "Maven found - {{ mvn_version.stdout | regex_search('Apache Maven [0-9]*.[0-9]*.[0-9]*') }}"
+  when: package_check.rc == 0
+  
+- name: Message
+  debug:
+    msg: "Maven not found"
+  when: package_check.rc == 1
