@@ -5,18 +5,18 @@
 - name: Getting default conf.
   ansible.builtin.git:
     repo: 'https://github.com/asa1997/ansible-role-oah-maven.git'
-    dest: '{{ vagrant_tmp }}'
+    dest: '{{ mvn_tmp }}'
     clone: yes
 
 - name: Resetting default conf.
   ansible.builtin.copy:
-    src: "{{ vagrant_tmp }}/defaults/main.yml"
+    src: "{{ mvn_tmp }}/defaults/main.yml"
     dest: "{{ role_path }}/defaults/main.yml"
     remote_src: yes
 
 - name: Cleaning up
   file:
-    path: "{{ vagrant_tmp }}"
+    path: "{{ mvn_tmp }}"
     state: absent
   
 - name: Installing package
