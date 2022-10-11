@@ -3,6 +3,7 @@
   ansible.builtin.include_tasks: oah-remove.yml
   
 - name: Getting default conf.
+  become: yes
   ansible.builtin.git:
     repo: 'https://github.com/asa1997/ansible-role-oah-maven.git'
     dest: '{{ mvn_tmp }}'
@@ -15,6 +16,7 @@
     remote_src: yes
 
 - name: Cleaning up
+  become: yes
   file:
     path: "{{ mvn_tmp }}"
     state: absent
