@@ -1,4 +1,4 @@
 ---
 # defaults file for ansible-role-oah-maven
 vagrnat_home: /home/vagrant
-mvn_tmp: "{{ vagrnat_home }}/mvn_tmp"
+mvn_tmp: "{{ home_dir }}/mvn_tmp"
