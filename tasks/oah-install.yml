@@ -1,0 +1,6 @@
+---
+- name: Installing Apache Maven
+  become: yes
+  apt:
+    name: maven
+    state: present

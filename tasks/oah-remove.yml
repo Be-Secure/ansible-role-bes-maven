@@ -1,0 +1,6 @@
+---
+- name: Removing Apache Maven
+  become: yes
+  apt:
+    name: maven
+    state: absent
