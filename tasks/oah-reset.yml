@@ -5,7 +5,7 @@
 - name: Getting default conf.
   become: yes
   ansible.builtin.git:
-    repo: 'https://github.com/asa1997/ansible-role-oah-maven.git'
+    repo: 'https://github.com/Be-Secure/ansible-role-oah-maven.git'
     dest: '{{ mvn_tmp }}'
     clone: yes
 
