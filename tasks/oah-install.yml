@@ -1,6 +1,12 @@
 ---
+- name: Checking Apache Maven Insrallation
+  ansible.builtin.shell: mvn -v
+  register: mvn_output
+  ignore_errors: true
+
 - name: Installing Apache Maven
   become: yes
   apt:
     name: maven
     state: present
+  when: mvn_output.rc != 0
